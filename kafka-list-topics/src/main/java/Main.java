@@ -28,5 +28,13 @@ public class Main {
                 System.out.printf("\tpartition: %d\n", p.partition());
             }
         }
+
+        //Get some partition info directly
+        //docker-compose exec broker kafka-topics --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 66 --topic foobar
+        System.out.println("Partition info for foobar");
+        List<PartitionInfo> info = consumer.partitionsFor("foobar");
+        for(PartitionInfo pi: info) {
+            System.out.printf("Leader for partition %d is %s\n", pi.partition(), pi.leader().host());
+        }
     }
 }
