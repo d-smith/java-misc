@@ -19,4 +19,8 @@ public  class User {
       this.lastName = lastName;
       this.age = age;
     }
+
+    public String toString() {
+        return String.format("%s %s %d",this.firstName, this.lastName, this.age);
+    }
   }

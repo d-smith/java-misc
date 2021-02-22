@@ -7,6 +7,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 
 public class Producer {
     public static void main(String[] args) throws Exception {
+        System.out.println("producer live");
         Properties props = new Properties();
 props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
 props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
